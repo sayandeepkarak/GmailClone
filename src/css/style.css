@@ -1,0 +1,46 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  --popp: "Poppins", sans-serif;
+  --roboto: "Roboto", sans-serif;
+  --light-border: #eceff1;
+  --logo: #5f6368;
+  --light-bg: #f1f3f4;
+  --theme-red: #d93025;
+}
+
+#root {
+  width: 100%;
+  max-height: 100vh;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* header component */
+
+#copy_txt {
+  margin: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.7vw;
+  letter-spacing: 0.2px;
+  font-family: var(--roboto);
+}
+
+/* @media screen and (max-width: 1024px) {
+  body {
+    min-width: 1024px;
+  }
+} */
