@@ -35,6 +35,7 @@ const Search = () => {
   };
   const handleresponsivesearchbar = () => {
     setresponsivesearchbarview(!responsivesearchbarview);
+    responsivesearchbarview && dispatch(hidefilter());
   };
   const unfocus = () => setfocusSearch(false);
   const activesearch = focusSearch

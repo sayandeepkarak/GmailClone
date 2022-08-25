@@ -75,7 +75,7 @@ export const MiniMizeIcon = styled.div`
 `;
 
 export const Form = styled.form`
-  height: auto;
+  height: 74%;
   width: 100%;
 `;
 
@@ -84,7 +84,7 @@ export const InputArea = styled.div`
   flex-direction: column;
   width: 100%;
   padding: 0px 16px;
-  height: -webkit-fill-available;
+  height: 100%;
 `;
 
 export const InputBlock = styled.div`

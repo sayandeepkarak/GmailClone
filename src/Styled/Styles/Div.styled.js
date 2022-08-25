@@ -11,7 +11,6 @@ export const InboxBlock = styled.div`
   width: -webkit-fill-available;
   height: auto;
   flex-direction: column;
-  z-index: -1;
 `;
 
 export const StarredBlock = styled(InboxBlock)``;
@@ -114,6 +113,7 @@ export const MenuArea = styled.div.attrs({
   width: ${(props) => (props.view ? "308px" : "129px")};
   display: flex;
   flex-direction: column;
+  z-index: 1;
   transition: all 0.2s linear;
   @media (max-width: 1070px) {
     ${(props) => props.view && "position: absolute"};

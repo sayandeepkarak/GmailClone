@@ -8,9 +8,11 @@ export const FilterPopup = styled(Paper).attrs({
     position: "absolute",
     top: 57,
     minWidth: "41.5%",
-    "@media(max-width: 768px)":{
+    "@media(max-width: 768px)": {
       minWidth: "100%",
-    }
+      position: "absolute",
+      left: 0,
+    },
   },
   elevation: 3,
 })``;
