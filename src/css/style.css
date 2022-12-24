@@ -39,8 +39,8 @@ body {
   font-family: var(--roboto);
 }
 
-/* @media screen and (max-width: 1024px) {
+@media screen and (max-width: 900px) {
   body {
-    min-width: 1024px;
+    min-width: 900px;
   }
-} */
+}

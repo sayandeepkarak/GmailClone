@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { Divider, ListItemIcon, Tooltip } from "@mui/material";
 import PersonAddAltOutlinedIcon from "@mui/icons-material/PersonAddAltOutlined";
 import { SideMenuButton } from "../../Styled/Mui/IconButton.styled";
@@ -14,42 +14,13 @@ import {
   MiniText,
   SimpleText,
 } from "../../Styled/Styles/Para.styled";
-import { remove } from "../../features/userSlice";
-import { useDispatch } from "react-redux";
-import { getValue } from "../../features/userSlice";
-import { auth, provider } from "../../fire";
-import { getRedirectResult, signInWithRedirect } from "firebase/auth";
-import { useSelector } from "react-redux";
+import profile from "../../Images/profile.jpg";
 
 const User = () => {
-  document.body.onload = () => {
-    getRedirectResult(auth)
-      .then((result) => {
-        if (result == null) {
-          login();
-        } else {
-          dispatch(getValue(result.user));
-          console.log(result);
-        }
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.warn(errorCode, errorMessage);
-      });
-  };
-  const userdata = useSelector((state) => state.userSlice.value);
   const [pop, setpop] = useState(null);
   const openpopup = Boolean(pop);
   const handleClick = (e) => setpop(e.currentTarget);
   const handleClose = () => setpop(null);
-  const dispatch = useDispatch();
-  const login = () => signInWithRedirect(auth, provider);
-  const logout = () => {
-    setpop(null);
-    dispatch(remove());
-    login();
-  };
   return (
     <div>
       <Tooltip title="Google Account">
@@ -57,7 +28,7 @@ const User = () => {
           aria-describedby={openpopup ? "user-popup" : undefined}
           onClick={handleClick}
         >
-          <DefaultAvatar width={30} height={30} src={userdata.photo} />
+          <DefaultAvatar width={30} height={30} src={profile} />
         </SideMenuButton>
       </Tooltip>
       <UserPopOver
@@ -68,10 +39,10 @@ const User = () => {
       >
         <UserPopupBox>
           <UserTop>
-            <DefaultAvatar width="30%" height="auto" src={userdata.photo} />
+            <DefaultAvatar width="30%" height="auto" src={profile} />
             <center>
-              <BoldText>{userdata.name}</BoldText>
-              <SimpleText>{userdata.email}</SimpleText>
+              <BoldText>Sayandeep Karak</BoldText>
+              <SimpleText>Sayandeep18.webdev@gmail.com</SimpleText>
             </center>
             <ManageButton>Manage your Google Account</ManageButton>
           </UserTop>
@@ -80,16 +51,16 @@ const User = () => {
             <AllUsers disablePadding>
               <ListButton>
                 <ListItemIcon>
-                  <DefaultAvatar width={30} height={30} src={userdata.photo} />
+                  <DefaultAvatar width={30} height={30} src={profile} />
                 </ListItemIcon>
                 <div className="accounts">
-                  <MiniBold>{userdata.name}</MiniBold>
-                  <MiniText>{userdata.email}</MiniText>
+                  <MiniBold>Sayandeep Karak</MiniBold>
+                  <MiniText>Sayandeep18.webdev@gmail.com</MiniText>
                 </div>
               </ListButton>
             </AllUsers>
             <AllUsers disablePadding>
-              <ListButton onClick={login}>
+              <ListButton>
                 <ListItemIcon>
                   <PersonAddAltOutlinedIcon />
                 </ListItemIcon>
@@ -100,9 +71,7 @@ const User = () => {
             </AllUsers>
             <Divider />
             <center>
-              <SignOutButton onClick={logout}>
-                Sign out of all accounts
-              </SignOutButton>
+              <SignOutButton>Sign out of all accounts</SignOutButton>
             </center>
             <Divider />
             <p id="copy_txt">

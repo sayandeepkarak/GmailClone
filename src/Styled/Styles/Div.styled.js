@@ -147,17 +147,4 @@ export const AddOnesArea = styled.div`
   width: 70px;
   flex-direction: column;
   padding: 6px;
-  @media (max-width: 768px) {
-    position: fixed;
-    background-color: white;
-    width: 100vw;
-    flex-direction: row;
-    height: 70px;
-    justify-content: center;
-    bottom: 0;
-    hr {
-      transform: rotate(90deg);
-      width: 4%;
-    }
-  }
 `;
