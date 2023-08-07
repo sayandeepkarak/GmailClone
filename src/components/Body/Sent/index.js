@@ -11,10 +11,6 @@ const index = () => {
       <center>
         <h1 style={{ fontFamily: "var(--popp" }}>Coming Soon........</h1>
       </center>
-      <img
-        src="https://lh3.googleusercontent.com/a-/AFdZuco5eM35yv5U-nAaq0J55HnwR1ERgYnf05yPC8Yt=s96-c"
-        alt=""
-      />
     </SentBlock>
   );
 };
